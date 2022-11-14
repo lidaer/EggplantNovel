@@ -1,11 +1,27 @@
-# ????
+--- #---------------------自定义配置----------------------------
 novel:
-  # ????
+  # 跨域配置
   cors:
-    # ???????
+    # 允许跨域的域名
     allow-origins:
       - http://localhost:1024
       - http://localhost:8080
+  # JWT密钥
+  jwt:
+    secret: E66559580A1ADF48CDD928516062F12E
+  # XSS 过滤配置
+  xss:
+    # 过滤开关
+    enabled: true
+    # 排除链接
+    excludes:
+      - /system/notice/*
+  file:
+    # 文件上传配置
+    upload:
+      # 上传路径
+      path: /Users/xiongxiaoyang/upload
+
 
 spring:
   datasource:
@@ -18,9 +34,19 @@ spring:
     virtual-host: novel
     template:
       retry:
-        # ????
+        # 开启重试
         enabled: true
-        # ??????
+        # 最大重试次数
         max-attempts: 3
-        # ????????????????
+        # 第一次和第二次重试间隔
         initial-interval: "3s"
+server:
+  port: 8888
+
+--- #---------------------中间件配置---------------------------
+spring:
+  # Redis 配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    # password:
