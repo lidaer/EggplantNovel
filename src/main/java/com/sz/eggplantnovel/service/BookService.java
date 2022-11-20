@@ -29,42 +29,57 @@ public interface BookService {
     /**
      * 小说新书榜查询
      *
-     * @return 小说更新排行列表
+     * @return 小说新书排行列表
      */
     RestResp<List<BookRankRespDto>> listNewestRankBooks();
 
     /**
+     * 小说更新榜查询
+     *
+     * @return 小说更新排行列表
+     */
+    RestResp<List<BookRankRespDto>> listUpdateRankBooks();
+
+    /**
      * 小说信息查询
      *
-     * @param bookId 小说Id
-     * @return 内容相关联的信息
+     * @param bookId 小说ID
+     * @return 小说信息
      */
-    RestResp<List<BookInfoRespDto>> getBookContentAbout(Long bookId);
+    RestResp<BookInfoRespDto> getBookById(Long bookId);
 
     /**
      * 小说内容相关信息查询
      *
+     * @param chapterId 章节ID
+     * @return 内容相关联的信息
+     */
+    RestResp<BookContentAboutRespDto> getBookContentAbout(Long chapterId);
+
+    /**
+     * 小说最新章节相关信息查询
+     *
      * @param bookId 小说ID
-     * @return 内容相关联的列表
+     * @return 章节相关联的信息
      */
     RestResp<BookChapterAboutRespDto> getLastChapterAbout(Long bookId);
 
     /**
      * 小说推荐列表查询
      *
-     * @param bookId 小说ID
-     * @return 小说信息列表
+     * @param bookId
+     * @return
      * @throws NoSuchAlgorithmException
      */
-    RestResp<BookInfoRespDto> listRecBooks(Long bookId) throws NoSuchAlgorithmException;
+    RestResp<List<BookInfoRespDto>> listRecBooks(Long bookId) throws NoSuchAlgorithmException;
 
     /**
      * 增加小说点击量
      *
-     * @param chapterId 小说ID
+     * @param bookId 小说ID
      * @return 成功状态
      */
-    RestResp<Void> addVisitCount(Long chapterId);
+    RestResp<Void> addVisitCount(Long bookId);
 
     /**
      * 获取上一章节ID
@@ -93,16 +108,16 @@ public interface BookService {
     /**
      * 小说分类列表查询
      *
-     * @param workDirection 作品方向；0-男频 1-女频
-     * @return
+     * @param workDirection 作品方向;0-男频 1-女频
+     * @return 分类列表
      */
     RestResp<List<BookCategoryRespDto>> listCategory(Integer workDirection);
 
     /**
      * 发表评论
      *
-     * @param dto 评论相关 Dto
-     * @return
+     * @param dto 评论相关 DTO
+     * @return void
      */
     RestResp<Void> saveComment(UserCommentReqDto dto);
 
@@ -112,12 +127,12 @@ public interface BookService {
      * @param bookId 小说ID
      * @return 小说最新评论数据
      */
-    RestResp<BookComentRepDto> listNewestComments(Long bookId);
+    RestResp<BookCommentRespDto> listNewestComments(Long bookId);
 
     /**
      * 删除评论
      *
-     * @param userId  评论用户ID
+     * @param userId    评论用户ID
      * @param commentId 评论ID
      * @return void
      */
@@ -126,10 +141,10 @@ public interface BookService {
     /**
      * 修改评论
      *
-     * @param userId 用户ID
-     * @param id    评论ID
+     * @param userId  用户ID
+     * @param id      评论ID
      * @param content 修改后的评论内容
-     * @return
+     * @return void
      */
     RestResp<Void> updateComment(Long userId, Long id, String content);
 
@@ -161,7 +176,7 @@ public interface BookService {
      * 查询小说发布章节列表
      *
      * @param bookId 小说ID
-     * @param dto 分页请求参数
+     * @param dto    分页请求参数
      * @return 章节分页列表数据
      */
     RestResp<PageRespDto<BookChapterRespDto>> listBookChapters(Long bookId, PageReqDto dto);

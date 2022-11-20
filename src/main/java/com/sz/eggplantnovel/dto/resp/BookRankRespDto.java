@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
  */
 
 @Data
-@Builder
 public class BookRankRespDto implements Serializable {
 
     private static final long serialVersionUID = 1L;

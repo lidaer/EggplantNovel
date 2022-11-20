@@ -9,7 +9,7 @@ import com.sz.eggplantnovel.dto.resp.UserLoginRespDto;
 import com.sz.eggplantnovel.dto.resp.UserRegisterRespDto;
 
 /**
- *会员模块 服务类
+ * 会员模块 服务类
  *
  * @author sz
  * @version 1.0

@@ -1,6 +1,8 @@
 package com.sz.eggplantnovel.dto.req;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Builder;
+import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotBlank;
@@ -13,6 +15,9 @@ import javax.validation.constraints.NotNull;
  * @version 1.0
  * @date 2022/11/14
  */
+
+@Data
+@Builder
 public class ChapterAddReqDto {
     /**
      * 小说ID

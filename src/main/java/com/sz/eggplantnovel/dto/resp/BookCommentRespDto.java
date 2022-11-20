@@ -15,7 +15,10 @@ import java.util.List;
  * @version 1.0
  * @date 2022/11/14
  */
-public class BookComentRepDto {
+
+@Data
+@Builder
+public class BookCommentRespDto {
     @Schema(description = "评论总数")
     private Long commentTotal;
 
