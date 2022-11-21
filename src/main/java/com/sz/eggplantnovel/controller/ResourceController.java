@@ -1,4 +1,4 @@
-package com.sz.eggplantnovel.controller.front;
+package com.sz.eggplantnovel.controller;
 
 import com.sz.eggplantnovel.core.common.constant.ApiRouterConsts;
 import com.sz.eggplantnovel.core.common.resp.RestResp;
@@ -14,6 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 /**
+ * 前台门户-资源(图片/视频/文档)模块 API 控制器
+ *
  * @author sz
  * @version 1.0
  * @date 2022/11/11
