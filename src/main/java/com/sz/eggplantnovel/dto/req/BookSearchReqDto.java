@@ -3,6 +3,7 @@ package com.sz.eggplantnovel.dto.req;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sz.eggplantnovel.core.common.req.PageReqDto;
 import io.swagger.v3.oas.annotations.Parameter;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -14,6 +15,8 @@ import java.util.Date;
  * @version 1.0
  * @date 2022/11/20
  */
+
+@Data
 public class BookSearchReqDto extends PageReqDto {
     /**
      * 搜索关键字

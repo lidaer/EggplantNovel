@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * 数据库搜索 服务实现类
+ *
  * @author sz
  * @version 1.0
  * @date 2022/11/20
