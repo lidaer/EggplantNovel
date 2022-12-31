@@ -1,9 +1,8 @@
 package com.sz.eggplantnovel.dto.req;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.*;
 import lombok.Data;
-
-import javax.validation.constraints.*;
 
 /**
  * @author sz

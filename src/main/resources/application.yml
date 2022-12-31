@@ -58,16 +58,3 @@ spring:
     host: 127.0.0.1
     port: 6379
     # password:
-
-  # rabbitmq配置
-  rabbitmq:
-    addresses: "amqp://guest:guest@47.106.243.172"
-    virtual-host: novel
-    template:
-      retry:
-        # 开启重试
-        enabled: true
-        # 最大重试次数
-        max-attempts: 3
-        # 第一次和第二次重试间隔
-        initial-interval: "3s"

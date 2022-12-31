@@ -1,11 +1,10 @@
 package com.sz.eggplantnovel.dto.req;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 import lombok.Data;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 /**
  * 用户登录 请求Dto
