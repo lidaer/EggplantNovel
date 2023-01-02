@@ -169,7 +169,6 @@ public class EsSearchServiceImpl implements SearchService {
                         .gte(JsonData.of(condition.getUpdateTimeMin().getTime()))
                 )._toQuery());
             }
-
             return b;
 
         });

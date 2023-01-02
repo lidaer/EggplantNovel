@@ -22,6 +22,7 @@ import com.sz.eggplantnovel.dto.req.ChapterAddReqDto;
 import com.sz.eggplantnovel.dto.resp.*;
 import com.sz.eggplantnovel.manager.Cache.*;
 import com.sz.eggplantnovel.manager.Dao.UserDaoManager;
+import com.sz.eggplantnovel.manager.mq.AmqpMsgManager;
 import com.sz.eggplantnovel.service.BookService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -71,6 +72,8 @@ public class BookServiceImpl implements BookService {
     private BookContentMapper bookContentMapper;
 
     private static final Integer REC_BOOK_COUNT = 4;
+
+    private final AmqpMsgManager amqpMsgManager;
 
     @Override
     public RestResp<List<BookRankRespDto>> listVisitRankBooks() {
@@ -376,7 +379,7 @@ public class BookServiceImpl implements BookService {
         //  b) 清除小说信息缓存
         bookInfoCacheManager.evictBookInfoCache(dto.getBookId());
         //  c) 发送小说信息更新的 MQ 消息
-        // amqpMsgManager.sendBookChangeMsg(dto.getBookId());
+        amqpMsgManager.sendBookChangeMsg(dto.getBookId());
         return RestResp.ok();
     }
 

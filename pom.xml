@@ -124,10 +124,10 @@
         </dependency>
 
         <!-- MQ 相关 -->
-<!--        <dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
-        </dependency>-->
+        </dependency>
 
         <!-- XXL-JOB 相关 -->
         <dependency>

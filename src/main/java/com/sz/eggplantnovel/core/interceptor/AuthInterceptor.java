@@ -1,4 +1,4 @@
-package com.sz.eggplantnovel.core.Interceptor;
+package com.sz.eggplantnovel.core.interceptor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sz.eggplantnovel.core.auth.AuthStrategy;
